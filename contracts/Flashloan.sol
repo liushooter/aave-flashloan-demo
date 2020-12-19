@@ -6,6 +6,10 @@ import "./aave/ILendingPool.sol";
 
 contract Flashloan is FlashLoanReceiverBase {
 
+    address public kovanWETHAddr = 0xd0A1E359811322d97991E03f863a0C30C2cF029C;
+    address public kovanDaiAddr = 0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD;
+    address public kovanAaveLendingPoolAddr = 0x506B0B2CF20FAA8f38a4E2B524EE43e1f4458Cc5;
+
     constructor(address _addressProvider) FlashLoanReceiverBase(_addressProvider) public {}
 
     /**
@@ -17,8 +21,7 @@ contract Flashloan is FlashLoanReceiverBase {
         uint256 _fee,
         bytes calldata _params
     )
-        external
-        override
+        external override
     {
         require(_amount <= getBalanceInternal(address(this), _reserve), "Invalid balance, was the flashLoan successful?");
 
@@ -34,7 +37,7 @@ contract Flashloan is FlashLoanReceiverBase {
     /**
         Flash loan 1000000000000000000 wei (1 ether) worth of `_asset`
      */
-    function flashloan(address _asset) public onlyOwner {
+    function flashloan(address _asset) public {
         bytes memory data = "";
         uint amount = 1 ether;
 
