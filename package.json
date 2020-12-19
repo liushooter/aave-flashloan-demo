@@ -1,0 +1,19 @@
+{
+  "name": "aave-flashloan-demo",
+  "description": "A truffle box containing all you need to get started with developing flash loans",
+  "version": "0.1.0",
+  "author": "Rebase Team",
+  "license": "BSD-3-Clause",
+  "contributors": [
+    "David Truong <david@aave.com>"
+  ],
+  "homepage": "",
+  "repository": "https://github.com/liushooter/aave-flashloan-demo",
+  "dependencies": {},
+  "devDependencies": {
+    "@openzeppelin/contracts": "^3.0.0",
+    "@truffle/hdwallet-provider": "^1.0.36",
+    "dotenv": "^8.2.0",
+    "truffle": "^5.1.32"
+  }
+}
